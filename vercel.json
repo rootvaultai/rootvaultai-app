@@ -1,14 +1,6 @@
 {
   "version": 2,
   "routes": [
-    {
-      "src": "/.well-known/ai-plugin.json",
-      "dest": "/.well-known/ai-plugin.json"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.js"
-    }
+    { "src": "/.well-known/(.*)", "dest": "/.well-known/$1" }
   ]
 }
-
