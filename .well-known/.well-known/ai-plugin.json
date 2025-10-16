@@ -1,0 +1,15 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "RootVaultAI — Trust Capsule App",
+  "name_for_model": "rootvault_capsule",
+  "description_for_human": "Verify brand Capsules, check trustScores, and explore trusted identities.",
+  "description_for_model": "Mint, verify, and inspect digital trust Capsules for brands and consumers.",
+  "auth": { "type": "none" },
+  "api": {
+    "type": "openapi",
+    "url": "https://YOUR-VERCEL-DOMAIN/.well-known/openapi.yaml"
+  },
+  "logo_url": "https://YOUR-VERCEL-DOMAIN/icon.png",
+  "contact_email": "support@registeredbrands.ai",
+  "legal_info_url": "https://YOUR-VERCEL-DOMAIN/legal"
+}
