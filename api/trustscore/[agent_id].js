@@ -5,3 +5,4 @@ export default async function handler(req, res) {
   if (!cap) return res.status(404).json({ error: 'CapsuleNotFound' });
   return res.json({ trustScore: cap.trustScore, reputation: 'Trusted' });
 }
+
