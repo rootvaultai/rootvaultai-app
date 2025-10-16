@@ -1,0 +1,53 @@
+openapi: 3.0.1
+info:
+  title: RootVaultAI Trust API
+  description: Capsule minting, verification, and scoring engine
+  version: "1.0"
+servers:
+  - url: https://YOUR-VERCEL-DOMAIN
+
+paths:
+  /api/mint:
+    post:
+      summary: Mint a Capsule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                agent_id: { type: string }
+                creator: { type: string }
+                metadata_uri: { type: string }
+                capsule_type: { type: string }
+              required: [agent_id, creator, metadata_uri, capsule_type]
+      responses:
+        "200": { description: Capsule minted successfully }
+
+  /api/trustscore/{agent_id}:
+    get:
+      summary: Get trustScore
+      parameters:
+        - in: path
+          name: agent_id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: trustScore result }
+
+  /api/verify:
+    post:
+      summary: Verify a Capsule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                capsule_id: { type: string }
+                verifying_agent: { type: string }
+              required: [capsule_id, verifying_agent]
+      responses:
+        "200": { description: Verification complete }
